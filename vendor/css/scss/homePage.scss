@@ -1,0 +1,551 @@
+$height_navbar : 83px;
+$white : #ffffff;
+$black : #070808;
+$blue : #3366FF;
+@font-face {
+	font-family: pokemonwhite;
+	src: url(../fonts/pokemonwhite.ttf);
+}
+@font-face {
+	font-family: pokemonblack;
+	src: url(../fonts/pokemonblack.ttf);
+}
+@font-face {
+	font-family: fonttron;
+	src: url(../fonts/trontron.ttf);
+}
+@font-face {
+	font-family: fontdam;
+	src: url(../fonts/OpenSans-Bold.ttf);
+}
+header {
+	width: 100%;
+	height: $height_navbar;
+	background-color: $black;
+	position: fixed;
+	font-size: 10px;
+	transition: linear 0.2s;
+	.header_navbar {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		.navbar_logo {
+			height: 100%;
+			cursor: pointer;
+			&:hover img {
+				transform: scale(1.1);
+			}
+			img{
+				height: 100%;
+			}
+		}
+		.navbar_menu {
+			display: flex;
+			align-items: center;
+			.menu_items{
+				padding: 20px;
+				text-decoration: none;
+				&:hover span {
+					color: #FF0066;
+				}
+				&:hover img {
+					transform: scale(1.1);
+				}
+				img{
+					width: 2em;
+					height: 2em;
+					transition: linear 0.2s;
+				}
+				span{	
+					color: white;
+					font-size: 2em;
+					transition: linear 0.2s;
+				}
+			}
+		}
+		.navbar_icons-link {
+			display: flex;
+			align-items: center;
+			.link_socioal{
+				display: flex;
+				align-items: center;
+				svg{	
+					margin: 2px;
+					color: $white;
+					width: 2em;
+					height: 2em;
+					transition: linear 0.2s;
+					&:hover {
+						color: #00CCFF;
+						transform: scale(1.1);
+					}
+				}
+			}
+			.link_user{
+				display: flex;
+				align-items: center;
+				&.active {
+					span {
+						border-color: transparent transparent white transparent;
+					}
+				}
+				.welcome_user {	
+					&.active {
+						display: unset;
+					}
+					color: $white;
+					font-size: 2em;
+					margin-left: 1em;
+					display: none;
+				}
+				.user-logout {
+					color: #00d8f5;
+					font-size: 1.5em;
+					text-decoration: none;
+					margin: 0 5px; 
+				}
+				svg{
+					margin-left: 7px;
+					color: $white;
+					width: 16px;
+					height: 16px;
+					cursor: pointer;
+				}
+				span{	
+					border: 5px solid;
+					border-color: white transparent transparent transparent;
+					transition: linear 0.6s;
+					cursor: pointer;
+				}
+			}			
+		}
+		.navbar_login {
+			position: absolute;
+			right: 0;
+			top: 100%;
+			background-color: rgb(1,1,1);
+			width: 337px;
+			min-height: 0px;
+			border-radius: 5px;
+			transition: linear 0.6s;
+			opacity: 1;
+			&.hidden {
+				transform: translateY(-100%);
+				top:0px;
+				opacity: 0;
+			}
+			.info_login-box	{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				.info_login {
+					color: $white;
+					font-family: fontdam;
+					font-size: 1.6em;
+				}
+				.change_password {
+					color: #819cf0;
+					font-family: fontdam;
+					font-size: 1.6em;
+					text-decoration: none;
+				}
+				.change_address {
+					color: #819cf0;
+					font-family: fontdam;
+					font-size: 1.6em;
+					text-decoration: none;
+				}
+				.history_order {
+					color: #819cf0;
+					font-family: fontdam;
+					font-size: 1.6em;
+					text-decoration: none;
+				}
+			}
+			.form_login {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				.form_login-inputs {
+					position: relative;
+					margin: 12px;
+					&:first-child {
+						margin-top: 40px; 
+					}
+					input {
+						font-size: 22px;
+						background-color: rgba(grey,0.5);
+						outline: none;
+						color: $white;
+						padding-left: 12px;
+					}
+					span {
+						position: absolute;
+						top: -18px;
+						left: 0px;
+						color: $white;
+						font-size: 17px;
+					}
+				}
+				.submit-login{
+					cursor: pointer;
+					background-color: #d92b4c;
+					color: $white;
+					font-size: 17px;
+					padding: 5px 15px;
+					margin: 8px;
+					border-radius: 5px;
+					font-family: fonttron;	
+				}
+				.register{
+					text-decoration: none;
+					color: #4378e8;
+					font-size: 17px;
+					padding: 5px 15px;
+					cursor: pointer;
+				}
+			}
+			.form_register {
+				height: 100%;
+				display: none;
+				flex-direction: column;
+				align-items: center;
+				.form_register-inputs {
+					position: relative;
+					margin: 20px;
+					&:first-child {
+						margin-top: 40px; 
+					}
+					input {
+						font-size: 22px;
+						background-color: rgba(grey,0.5);
+						outline: none;
+						color: $white;
+						padding-left: 12px;
+					}
+					span {
+						position: absolute;
+						top: -18px;
+						left: 0px;
+						color: $white;
+						font-size: 17px;
+					}
+				}
+				.submit-register {
+					cursor: pointer;
+					background-color: #d92b4c;
+					color: $white;
+					font-size: 17px;
+					padding: 5px 15px;
+					margin: 8px;
+					border-radius: 5px;
+					font-family: fonttron;
+				}
+				.login{
+					text-decoration: none;
+					color: #4378e8;
+					font-size: 17px;
+					padding: 10px 15px;
+					cursor: pointer;
+				}
+			}
+		}
+		
+	}
+}
+$width-box_content: 580px;
+$height-box_content: 272px;
+.container{
+	width: 100%;
+	background-color: #23272a;
+	padding-top:$height_navbar;
+	font-size: 10px;
+	.container_header{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		iframe {	
+			width: 60%;
+			height: 400px;
+		}
+		.editvideo-pencil {
+			&.active {
+				display: unset;
+			}
+			display: none;
+			width: 3em;
+			height: 3em;
+			padding: 0.2em;
+			border: 1px solid $white;
+			cursor: pointer;
+			color: $white;
+		}
+		.table_history_order {
+			border: 0.2em solid white;
+			border-collapse: collapse;
+			color: white;
+			text-align: center;
+			th {
+				font-size: 3em;
+				border: 0.1em solid white;
+				padding: 0.5em;
+			}
+			td {
+				font-size: 3em;
+				border: 0.1em solid white;
+				padding: 0.5em;
+			}
+		}
+		.form_change_password {
+			display: flex;
+			flex-direction: column;
+			box-shadow: 0 0 60px green;
+			background-color: white;
+			margin-top: 2em;
+			border-radius: 5px;
+			.form_title {
+				font-size: 5em;
+				font-weight: 900;
+			}
+			input {
+				&:last-child {
+					background-color: red;
+					color: white;
+					cursor: pointer;
+					margin: 0 0;
+					width: 100px;
+					text-align: center;
+					padding: 0.5em 0;
+				}
+				border-radius: 5px;
+				font-size: 2em;
+				padding: 0.1em;
+				border: none;
+				margin: 0.5em 0;
+			}
+		}
+		.form_change_address {
+			display: flex;
+			flex-direction: column;
+			box-shadow: 0 0 60px green;
+			background-color: white;
+			margin-top: 2em;
+			border-radius: 5px;
+			.form_title {
+				font-size: 5em;
+				font-weight: 900;
+			}
+			.now_address {
+				font-size: 2em;
+				font-weight: 700;
+			}
+			input {
+				&:last-child {
+					background-color: red;
+					color: white;
+					cursor: pointer;
+					margin: 0 0;
+					width: 100px;
+					text-align: center;
+					padding: 0.5em 0;
+				}
+				border-radius: 5px;
+				font-size: 2em;
+				padding: 0.1em;
+				border: none;
+				margin: 0.5em 0;
+			}
+		}	
+	}
+	.container_body{
+		.body-title{
+			color: white;
+			margin: 15px;
+			font-size: 4.5em;
+			font-family: fontdam;
+		}
+		.body-box_content{
+			.contents{
+				display: flex;
+				flex-direction: column;
+				border-radius: 5px; 
+				margin: 5px;
+				padding: 15px;
+				width: $width-box_content;
+				height: $height-box_content;
+				background-color: $black;
+				overflow: auto;
+				.contents_title{
+					color: $white;
+					font-size: 2.5em;
+					font-family: fontdam;
+					display: flex;
+					justify-content: space-between;
+					.edit-pencil {
+						&.active {
+							display: unset;
+						}
+						display: none;
+						width: 1em;
+						height: 1em;
+						padding: 0.2em;
+						border: 1px solid $white;
+						cursor: pointer;
+					}
+				}
+				.contents_time {
+					font-size: 1.5em;
+					text-align: end;
+					color: $white;
+					span {
+						color: $blue;
+					}
+				}
+				.contents_content {
+					color: $white;
+					font-size: 1.5em;
+					margin: 5px;
+				}
+			}
+		}
+		
+	}
+}
+.box-form_edit {
+	&.active {
+		display: flex;
+	}
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	font-size: 10px;
+	z-index: 1;
+	.form_edit {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		.edit-title {
+			font-size: 2em;
+			border: 1px solid green;
+			padding: 0.2em;
+		}
+		.edit-content {
+			width: 574px;
+			height: 202px;
+		}
+		.edit-submit {
+			margin-top:265px;
+			.edit-finish,.cancel-edit{
+				cursor: pointer;
+				background-color: #d92b4c;
+				color: $white;
+				font-size: 17px;
+				padding: 5px 15px;
+				margin: 8px;
+				border-radius: 5px;
+				font-family: fonttron;
+			}
+		}
+	}
+}
+.box-form_edit-video {
+	width: 50%;
+	position: fixed;
+	top: 28%;
+	left: 72%;
+	font-size: 10px;
+	display: none;
+	&.active {
+		display: unset;
+	}
+	.form_edit_video {
+		display: flex;
+		align-items: center;
+		.youtubecode {
+			font-size: 2em;
+			height: 1.7em;
+			margin-right: 0.5em; 
+		}
+		.edit_video-submit {
+			.edit_video-finish,.cancel_video-edit {
+				cursor: pointer;
+				background-color: #d92b4c;
+				color: $white;
+				font-size: 17px;
+				padding: 5px 15px;
+				margin: 8px;
+				border-radius: 5px;
+				font-family: fonttron;
+			}
+		}
+	}
+}
+footer {
+	background-color: #23272a;
+	width: 100%;
+	font-size: 10px;
+	position: relative;
+	overflow: hidden;
+	svg {
+		width: 100%;
+
+	}
+	.footer_contents {
+		position: absolute;
+		top: 35%;
+		left: 40%;
+		display: flex;
+		.footer_content-socioals {
+			.footer_socioal-title {
+				font-size: 3em;
+				font-family: fontdam;
+				color: $white;
+			}
+			.footer_socioal-icon-link {
+				display: flex;
+				align-items: center;
+				.footer_link_socioal{
+					width: 2em;
+					height: 2em;
+					color: $white;
+					margin: 2px;
+				}
+			}
+		}
+		.footer_content-logo {
+			img {
+				width: 12em;
+				height: 12em;
+			}
+		}
+	}
+}
+/* scrollbar */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 50px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff3333;
+}

@@ -1,0 +1,439 @@
+@font-face {
+  font-family: pokemonwhite;
+  src: url(../fonts/pokemonwhite.ttf); }
+@font-face {
+  font-family: pokemonblack;
+  src: url(../fonts/pokemonblack.ttf); }
+@font-face {
+  font-family: fonttron;
+  src: url(../fonts/trontron.ttf); }
+@font-face {
+  font-family: fontdam;
+  src: url(../fonts/OpenSans-Bold.ttf); }
+header {
+  width: 100%;
+  height: 83px;
+  background-color: #070808;
+  position: fixed;
+  font-size: 10px;
+  transition: linear 0.2s; }
+  header .header_navbar {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; }
+    header .header_navbar .navbar_logo {
+      height: 100%;
+      cursor: pointer; }
+      header .header_navbar .navbar_logo:hover img {
+        transform: scale(1.1); }
+      header .header_navbar .navbar_logo img {
+        height: 100%; }
+    header .header_navbar .navbar_menu {
+      display: flex;
+      align-items: center; }
+      header .header_navbar .navbar_menu .menu_items {
+        padding: 20px;
+        text-decoration: none; }
+        header .header_navbar .navbar_menu .menu_items:hover span {
+          color: #FF0066; }
+        header .header_navbar .navbar_menu .menu_items:hover img {
+          transform: scale(1.1); }
+        header .header_navbar .navbar_menu .menu_items img {
+          width: 2em;
+          height: 2em;
+          transition: linear 0.2s; }
+        header .header_navbar .navbar_menu .menu_items span {
+          color: white;
+          font-size: 2em;
+          transition: linear 0.2s; }
+    header .header_navbar .navbar_icons-link {
+      display: flex;
+      align-items: center; }
+      header .header_navbar .navbar_icons-link .link_socioal {
+        display: flex;
+        align-items: center; }
+        header .header_navbar .navbar_icons-link .link_socioal svg {
+          margin: 2px;
+          color: #ffffff;
+          width: 2em;
+          height: 2em;
+          transition: linear 0.2s; }
+          header .header_navbar .navbar_icons-link .link_socioal svg:hover {
+            color: #00CCFF;
+            transform: scale(1.1); }
+      header .header_navbar .navbar_icons-link .link_user {
+        display: flex;
+        align-items: center; }
+        header .header_navbar .navbar_icons-link .link_user.active span {
+          border-color: transparent transparent white transparent; }
+        header .header_navbar .navbar_icons-link .link_user .welcome_user {
+          color: #ffffff;
+          font-size: 2em;
+          margin-left: 1em;
+          display: none; }
+          header .header_navbar .navbar_icons-link .link_user .welcome_user.active {
+            display: unset; }
+        header .header_navbar .navbar_icons-link .link_user .user-logout {
+          color: #00d8f5;
+          font-size: 1.5em;
+          text-decoration: none;
+          margin: 0 5px; }
+        header .header_navbar .navbar_icons-link .link_user svg {
+          margin-left: 7px;
+          color: #ffffff;
+          width: 16px;
+          height: 16px;
+          cursor: pointer; }
+        header .header_navbar .navbar_icons-link .link_user span {
+          border: 5px solid;
+          border-color: white transparent transparent transparent;
+          transition: linear 0.6s;
+          cursor: pointer; }
+    header .header_navbar .navbar_login {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: #010101;
+      width: 337px;
+      min-height: 0px;
+      border-radius: 5px;
+      transition: linear 0.6s;
+      opacity: 1; }
+      header .header_navbar .navbar_login.hidden {
+        transform: translateY(-100%);
+        top: 0px;
+        opacity: 0; }
+      header .header_navbar .navbar_login .info_login-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; }
+        header .header_navbar .navbar_login .info_login-box .info_login {
+          color: #ffffff;
+          font-family: fontdam;
+          font-size: 1.6em; }
+        header .header_navbar .navbar_login .info_login-box .change_password {
+          color: #819cf0;
+          font-family: fontdam;
+          font-size: 1.6em;
+          text-decoration: none; }
+        header .header_navbar .navbar_login .info_login-box .change_address {
+          color: #819cf0;
+          font-family: fontdam;
+          font-size: 1.6em;
+          text-decoration: none; }
+        header .header_navbar .navbar_login .info_login-box .history_order {
+          color: #819cf0;
+          font-family: fontdam;
+          font-size: 1.6em;
+          text-decoration: none; }
+      header .header_navbar .navbar_login .form_login {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center; }
+        header .header_navbar .navbar_login .form_login .form_login-inputs {
+          position: relative;
+          margin: 12px; }
+          header .header_navbar .navbar_login .form_login .form_login-inputs:first-child {
+            margin-top: 40px; }
+          header .header_navbar .navbar_login .form_login .form_login-inputs input {
+            font-size: 22px;
+            background-color: rgba(128, 128, 128, 0.5);
+            outline: none;
+            color: #ffffff;
+            padding-left: 12px; }
+          header .header_navbar .navbar_login .form_login .form_login-inputs span {
+            position: absolute;
+            top: -18px;
+            left: 0px;
+            color: #ffffff;
+            font-size: 17px; }
+        header .header_navbar .navbar_login .form_login .submit-login {
+          cursor: pointer;
+          background-color: #d92b4c;
+          color: #ffffff;
+          font-size: 17px;
+          padding: 5px 15px;
+          margin: 8px;
+          border-radius: 5px;
+          font-family: fonttron; }
+        header .header_navbar .navbar_login .form_login .register {
+          text-decoration: none;
+          color: #4378e8;
+          font-size: 17px;
+          padding: 5px 15px;
+          cursor: pointer; }
+      header .header_navbar .navbar_login .form_register {
+        height: 100%;
+        display: none;
+        flex-direction: column;
+        align-items: center; }
+        header .header_navbar .navbar_login .form_register .form_register-inputs {
+          position: relative;
+          margin: 20px; }
+          header .header_navbar .navbar_login .form_register .form_register-inputs:first-child {
+            margin-top: 40px; }
+          header .header_navbar .navbar_login .form_register .form_register-inputs input {
+            font-size: 22px;
+            background-color: rgba(128, 128, 128, 0.5);
+            outline: none;
+            color: #ffffff;
+            padding-left: 12px; }
+          header .header_navbar .navbar_login .form_register .form_register-inputs span {
+            position: absolute;
+            top: -18px;
+            left: 0px;
+            color: #ffffff;
+            font-size: 17px; }
+        header .header_navbar .navbar_login .form_register .submit-register {
+          cursor: pointer;
+          background-color: #d92b4c;
+          color: #ffffff;
+          font-size: 17px;
+          padding: 5px 15px;
+          margin: 8px;
+          border-radius: 5px;
+          font-family: fonttron; }
+        header .header_navbar .navbar_login .form_register .login {
+          text-decoration: none;
+          color: #4378e8;
+          font-size: 17px;
+          padding: 10px 15px;
+          cursor: pointer; }
+
+.container {
+  width: 100%;
+  background-color: #23272a;
+  padding-top: 83px;
+  font-size: 10px; }
+  .container .container_header {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .container .container_header iframe {
+      width: 60%;
+      height: 400px; }
+    .container .container_header .editvideo-pencil {
+      display: none;
+      width: 3em;
+      height: 3em;
+      padding: 0.2em;
+      border: 1px solid #ffffff;
+      cursor: pointer;
+      color: #ffffff; }
+      .container .container_header .editvideo-pencil.active {
+        display: unset; }
+    .container .container_header .table_history_order {
+      border: 0.2em solid white;
+      border-collapse: collapse;
+      color: white;
+      text-align: center; }
+      .container .container_header .table_history_order th {
+        font-size: 3em;
+        border: 0.1em solid white;
+        padding: 0.5em; }
+      .container .container_header .table_history_order td {
+        font-size: 3em;
+        border: 0.1em solid white;
+        padding: 0.5em; }
+    .container .container_header .form_change_password {
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 60px green;
+      background-color: white;
+      margin-top: 2em;
+      border-radius: 5px; }
+      .container .container_header .form_change_password .form_title {
+        font-size: 5em;
+        font-weight: 900; }
+      .container .container_header .form_change_password input {
+        border-radius: 5px;
+        font-size: 2em;
+        padding: 0.1em;
+        border: none;
+        margin: 0.5em 0; }
+        .container .container_header .form_change_password input:last-child {
+          background-color: red;
+          color: white;
+          cursor: pointer;
+          margin: 0 0;
+          width: 100px;
+          text-align: center;
+          padding: 0.5em 0; }
+    .container .container_header .form_change_address {
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 0 60px green;
+      background-color: white;
+      margin-top: 2em;
+      border-radius: 5px; }
+      .container .container_header .form_change_address .form_title {
+        font-size: 5em;
+        font-weight: 900; }
+      .container .container_header .form_change_address .now_address {
+        font-size: 2em;
+        font-weight: 700; }
+      .container .container_header .form_change_address input {
+        border-radius: 5px;
+        font-size: 2em;
+        padding: 0.1em;
+        border: none;
+        margin: 0.5em 0; }
+        .container .container_header .form_change_address input:last-child {
+          background-color: red;
+          color: white;
+          cursor: pointer;
+          margin: 0 0;
+          width: 100px;
+          text-align: center;
+          padding: 0.5em 0; }
+  .container .container_body .body-title {
+    color: white;
+    margin: 15px;
+    font-size: 4.5em;
+    font-family: fontdam; }
+  .container .container_body .body-box_content .contents {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 15px;
+    width: 580px;
+    height: 272px;
+    background-color: #070808;
+    overflow: auto; }
+    .container .container_body .body-box_content .contents .contents_title {
+      color: #ffffff;
+      font-size: 2.5em;
+      font-family: fontdam;
+      display: flex;
+      justify-content: space-between; }
+      .container .container_body .body-box_content .contents .contents_title .edit-pencil {
+        display: none;
+        width: 1em;
+        height: 1em;
+        padding: 0.2em;
+        border: 1px solid #ffffff;
+        cursor: pointer; }
+        .container .container_body .body-box_content .contents .contents_title .edit-pencil.active {
+          display: unset; }
+    .container .container_body .body-box_content .contents .contents_time {
+      font-size: 1.5em;
+      text-align: end;
+      color: #ffffff; }
+      .container .container_body .body-box_content .contents .contents_time span {
+        color: #3366FF; }
+    .container .container_body .body-box_content .contents .contents_content {
+      color: #ffffff;
+      font-size: 1.5em;
+      margin: 5px; }
+
+.box-form_edit {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  z-index: 1; }
+  .box-form_edit.active {
+    display: flex; }
+  .box-form_edit .form_edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .box-form_edit .form_edit .edit-title {
+      font-size: 2em;
+      border: 1px solid green;
+      padding: 0.2em; }
+    .box-form_edit .form_edit .edit-content {
+      width: 574px;
+      height: 202px; }
+    .box-form_edit .form_edit .edit-submit {
+      margin-top: 265px; }
+      .box-form_edit .form_edit .edit-submit .edit-finish, .box-form_edit .form_edit .edit-submit .cancel-edit {
+        cursor: pointer;
+        background-color: #d92b4c;
+        color: #ffffff;
+        font-size: 17px;
+        padding: 5px 15px;
+        margin: 8px;
+        border-radius: 5px;
+        font-family: fonttron; }
+
+.box-form_edit-video {
+  width: 50%;
+  position: fixed;
+  top: 28%;
+  left: 72%;
+  font-size: 10px;
+  display: none; }
+  .box-form_edit-video.active {
+    display: unset; }
+  .box-form_edit-video .form_edit_video {
+    display: flex;
+    align-items: center; }
+    .box-form_edit-video .form_edit_video .youtubecode {
+      font-size: 2em;
+      height: 1.7em;
+      margin-right: 0.5em; }
+    .box-form_edit-video .form_edit_video .edit_video-submit .edit_video-finish, .box-form_edit-video .form_edit_video .edit_video-submit .cancel_video-edit {
+      cursor: pointer;
+      background-color: #d92b4c;
+      color: #ffffff;
+      font-size: 17px;
+      padding: 5px 15px;
+      margin: 8px;
+      border-radius: 5px;
+      font-family: fonttron; }
+
+footer {
+  background-color: #23272a;
+  width: 100%;
+  font-size: 10px;
+  position: relative;
+  overflow: hidden; }
+  footer svg {
+    width: 100%; }
+  footer .footer_contents {
+    position: absolute;
+    top: 35%;
+    left: 40%;
+    display: flex; }
+    footer .footer_contents .footer_content-socioals .footer_socioal-title {
+      font-size: 3em;
+      font-family: fontdam;
+      color: #ffffff; }
+    footer .footer_contents .footer_content-socioals .footer_socioal-icon-link {
+      display: flex;
+      align-items: center; }
+      footer .footer_contents .footer_content-socioals .footer_socioal-icon-link .footer_link_socioal {
+        width: 2em;
+        height: 2em;
+        color: #ffffff;
+        margin: 2px; }
+    footer .footer_contents .footer_content-logo img {
+      width: 12em;
+      height: 12em; }
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 6px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 50px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 50px; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff3333; }

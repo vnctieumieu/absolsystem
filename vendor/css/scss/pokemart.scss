@@ -1,0 +1,501 @@
+$header_bgc: #990099;
+$navbar_height: 60px;
+$tam: 10px;
+@font-face {
+	font-family: pokemonwhite;
+	src: url(../fonts/pokemonwhite.ttf);
+}
+@font-face {
+	font-family: pokemonblack;
+	src: url(../fonts/pokemonblack.ttf);
+}
+@font-face {
+	font-family: fonttron;
+	src: url(../fonts/trontron.ttf);
+}
+@font-face {
+	font-family: fontdam;
+	src: url(../fonts/OpenSans-Bold.ttf);
+}
+@font-face {
+	font-family: fontdam2;
+	src: url(../fonts/NerkoOne-Regular.ttf);
+}
+@font-face {
+	font-family: fonttron2;
+	src: url(../fonts/YanoneKaffeesatz-VariableFont_wght.ttf);
+}
+@font-face {
+	font-family: fontprice;
+	src: url(../fonts/Goldman-Bold.ttf);
+}
+@font-face {
+	font-family: fontname;
+	src: url(../fonts/Inter-Medium-slnt=0.ttf);
+}
+@font-face {
+	font-family: fontprice2;
+	src: url(../fonts/Karla-SemiBold.ttf);
+}
+$fname: 'JetBrains Mono', monospace;
+$ftext: 'Roboto Condensed', sans-serif;
+header {
+	width: 100%;
+	height: $navbar_height;
+	background-color: $header_bgc;
+	font-size: 10px;
+	position: fixed;
+	z-index: 10;
+	.header_navbar {
+		height: 100%;
+		display: flex;
+		justify-content: space-between;
+		.navbar-logo {
+			height: 100%;
+			cursor: pointer;
+			padding: 0.3em;
+			img {
+				height: 100%;
+			}
+			span {
+				margin-left: -1em;
+				font-size: 1.5em;
+				color: white;
+				font-family: fontdam2;
+				font-weight: 900;
+			}
+		}
+		.navbar-menu_box {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.menu-title {
+				display: flex;
+				align-items: center;
+				height: 50%;
+				cursor: pointer;
+				text-decoration: none;
+				img {
+					height: 2.5em;
+					margin-right: 1em;
+				}
+				span {
+					font-size: 2.5em;
+					color: white;
+					font-family: fontdam2;
+				}
+			}
+			.menu-list {
+				display: flex;
+				align-items: center;
+				height: 50%;
+				span {
+					font-size: 1.5em;
+					color: white;
+					font-family: fontdam;
+					margin: 1em;
+					cursor: pointer;
+					&:hover {
+						text-shadow: 0 0 20px red;
+						transform: scale(1.5);
+					}
+				}
+			}
+		}
+		.navbar-customer {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			position: relative;
+			.customer {
+				margin: 0.5em 1.5em;
+				display: flex;
+				align-items: center;
+				text-decoration: none;
+				// Giỏ hàng
+				svg {
+					width: 2.5em;
+					height: 2.5em;
+					color: white;
+					cursor: pointer;
+					transition: linear 0.5s;
+					&.active {
+						text-shadow: 0 0 20px red;
+						transform: scale(1.7);
+					}
+				}
+			}
+			.cart_count {
+				position: absolute;
+				font-size: 2em;
+				color: black;
+				font-weight: 900;
+				margin: 0 0.5em;
+				top: 0.7em;
+				left: 0.8em;
+				display: none;
+				transition: linear 0.5s;
+				&.active {
+					display: unset;
+				}
+			}
+			.nameuser {
+				font-size: 2em;
+				font-family: fontname;
+				color: white;
+			}
+			.logout {
+				font-size: 1.5em;
+				font-family: fontname;
+				color: #16f0f0;
+				text-decoration: none;
+				padding: 0.3em;
+			}
+		}
+	}
+}
+$container_bgcl: #fbfffa;
+.container {
+	padding-top: $navbar_height;
+	width: 100%;
+	min-height: 0px;
+	background-color: $container_bgcl;
+	height: 9000px;
+	font-size: 10px;
+	.container-contents {
+		// Thú Bông
+		.content-form_search {
+			display: flex;
+			align-items: center;
+			padding: 0.2em;
+			margin: 1em 0 0 0.5em;
+			width: 330px;
+			height: 30px;
+			background-color: #d9ecff;
+			border-radius: 5px;
+			svg {
+				width: 2em;
+				height: 2em;
+				color: #aa0af5;
+			}
+			input {
+				padding-left: 0.5em;
+				font-size: 1.8em;
+				background-color: transparent;
+				outline: none;
+				color: #502863;
+				font-family: fonttron;
+				border: none;
+				border: 0.05em solid #eba6f7;
+				margin: 0 0.5em;
+			}
+			button {
+				font-size: 1.8em;
+				color: #aa0af5;
+				border: none;
+				cursor: pointer;
+				border: 0.05em solid #eba6f7;
+				border-radius: 1px;
+			}
+		}
+		.box-show_thubong {
+			display: flex;
+			.thubong {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: flex-start;
+				padding: 0.5em;
+				border: 0.1em solid #8cfc88;
+				background-color: #eeffed;
+				margin: 0.5em 0.5em;
+				position: relative;
+				.thubong-name {
+					font-size: 2em;
+					color: #086cc9;
+					padding:0 0 0.2em 0;
+					font-family: fontname;
+					cursor: pointer;
+					// font-weight: 900;
+					text-decoration: none;
+					&:hover {
+						transform: scale(1.2);
+						font-weight: 900;
+					}
+				}
+				.thubong-img {
+					padding: 0.1em;
+					width: 100%;
+					height: 260px;
+					object-fit: cover;
+					object-position: center;
+				}
+				.thubong-price {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					.thubong-oldprice {
+						// font-size: 1em;
+						// color: #454343;
+						// font-family: fontprice2;
+						// text-decoration: line-through;
+						font-size: 2em;
+						color: black;
+						font-family: fontprice2;
+					}
+					.thubong-nowprice {
+						font-size: 2em;
+						color: #fc4538;
+						font-family: fontprice2;
+					}
+				}
+				.thubong-discount {
+					display: none;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					position: absolute;
+					top: 0;
+					right: 0;
+					width: 40px;
+					height: 50px;
+					background-color: rgb(255,216,57);
+					&.active {
+						display: flex;
+					}
+					&::after {
+						bottom: -6px;
+						position: absolute;
+						content: "";
+						border-style: solid;
+						border-width: 0 20px 6px;
+						border-color: transparent rgb(255,216,57) transparent rgb(255,216,57);
+					}
+					.discount-value {
+						font-size: 2em;
+						color: red;
+						font-weight: 900;
+					}
+					.discount-status {
+						font-size: 1.8em;
+						color: #ffffff;
+						font-weight: 900;
+					}
+				}
+				.thubong-love {
+					position: absolute;
+					top:  0;
+					left: -7px;
+					display: none;
+					align-items: center;
+					background-color: rgba(#ff0dd7,0.5);
+					&.active {
+						display: flex;
+					}
+					&::after {
+						position: absolute;
+						bottom: -7px;
+						left: 0;
+						content: "";
+						border-top: 7px solid #989799;
+						border-left: 7px solid transparent;
+					}
+					svg {
+						width: 2em;
+						height: 2em;
+						color: white;
+						padding: 0.5em;
+					}
+					.love-status {
+						font-size: 2em;
+						color: white;
+					}
+				}
+				.thubong-cart {
+					.addcart,.cancelcart {
+						width: 50px;
+						height: 25px;
+						position: absolute;
+						right: 10px;
+						bottom: 20px;
+						background-color: #ff3dff;
+						font-family: fonttron;
+						color: white;
+						border-radius: 5px;
+						border: 1px solid white;
+						font-size: 1.5em;
+						cursor: pointer;
+						font-weight: 900;
+					}
+					.addcart {
+						&.unactive {
+							display: none;
+						}
+					} 
+					.cancelcart {
+						display: none;
+						&.active {
+							display: unset;
+						}
+					}
+				}				
+			}
+		}
+		// End thú bông
+		// Show product
+		.box_product {
+			width: 100%;
+			height: 100%;
+			transform: translateY(25%);
+			background-color: rgba(#129dfa,0.5);
+			box-shadow: 0 0 100px #47f879;
+			.product_inner {
+				width: 100%;
+				display: flex;
+				.product_img_view {
+					width: 100%;
+					img {
+						width: 100%;
+						height: 400px;
+						object-fit: cover;
+						object-position: center;
+						padding: 0.5em;
+						border-radius: 1.5em; 
+						&:hover {
+							transform: scale(1.5);
+						}
+					}
+				}
+				.product_info {
+					display: flex;
+					flex-direction: column;
+					font-size: 1.8em;
+					padding: 1em;
+					position: relative;
+					.product_info-name {
+						font-family: $fname;
+						color: black;
+						font-weight: 900;
+						text-shadow: 0 0 10px white;
+						font-size: 2.5em;
+						padding: 0.1em;
+					}
+					.product_info-price {
+						font-family: $fname;
+						color: black;
+						font-weight: 900;
+						text-shadow: 0 0 10px white;
+						padding: 0.1em;
+					}
+					.product_info-size {
+						font-family: $fname;
+						color: black;
+						font-weight: 900;
+						text-shadow: 0 0 10px white;
+						padding: 0.1em;
+					}
+					.product_info-type {
+						font-family: $fname;
+						color: black;
+						font-weight: 900;
+						text-shadow: 0 0 10px white;
+						padding: 0.1em;
+					}
+					.product_info-description {
+						font-size: 1.4em;
+						font-family: $ftext;
+						color: white;
+						margin-top: 2em;
+					}
+					.product_info_buy {
+						position: absolute;
+						right: 0.5em;
+						bottom: 0;
+						cursor: pointer;
+						text-align: center;
+						font-family: $ftext;
+						font-size: 1.5em;
+						padding: 0.5em;
+						background-color: red;
+						color: white;
+						border-radius: 5px;
+					}
+				}
+			}
+			.product_list_picture {
+				width: 100%;
+				display: flex;
+				.picture_items {
+					width: 100%;
+					cursor: pointer;
+					img {	
+						width: 100%;
+						height: 150px;
+						object-fit: cover;
+						object-position: center;
+						padding: 0.5em;
+						border-radius: 1.5em; 
+					}
+				}
+			}
+		}
+		// Bảng sản phẩm người dùng chọn
+		.table_box {
+			width: 100%;
+			.table_product_selected {
+				margin: 2em 0;
+				border-collapse: collapse;
+				border:3px solid green;
+				border-left: none;
+				text-align: center;
+				box-shadow: 0 0 30px #81e600;
+				.table_title {
+					color: #5716fd;
+					font-size: 2em;
+					padding: 0.5em;
+					font-weight: 900;
+				}
+				th {
+					border:2px solid green;
+					padding: 0.5em;
+					font-size: 2.2em;
+				}
+				td {
+					border:2px solid green;
+					padding: 0.5em;
+					font-size: 2.2em;
+					.clear {
+						font-weight: 900;
+						font-size: 1em;
+						&:hover {
+							color: red;
+							cursor: pointer;
+						}
+					}
+				}
+				.table_collumn_name {
+
+				}
+				.product_selected {
+
+				}
+				.product_total {
+
+				}
+			}
+			.submit_order {
+				width: 200px;
+				background-color: red;
+				font-size: 2em;
+				margin: 0.5em;
+				color: white;
+				border: none;
+				padding: 0.2em;
+				border-radius: 5px;
+				cursor: pointer;
+				text-decoration: none;
+			}
+		}
+	}
+}

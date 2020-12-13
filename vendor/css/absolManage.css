@@ -1,0 +1,531 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"), url(https://example.com/MaterialIcons-Regular.woff) format("woff"), url(https://example.com/MaterialIcons-Regular.ttf) format("truetype"); }
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga'; }
+
+header {
+  width: 100%;
+  height: 65px;
+  font-size: 10px;
+  background-color: #ebf2f8;
+  box-shadow: 0 0 30px #000000a5;
+  position: fixed; }
+  header .header_navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0.1em 2em;
+    box-sizing: border-box; }
+    header .header_navbar .logo {
+      width: 280px;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      header .header_navbar .logo > a {
+        text-decoration: none;
+        height: 100%; }
+        header .header_navbar .logo > a img {
+          height: 100%;
+          object-fit: cover;
+          object-position: center; }
+        header .header_navbar .logo > a .logo-text {
+          font-family: "Permanent Marker", cursive;
+          font-size: 2em;
+          margin-left: -0.8em;
+          color: #4e6391; }
+      header .header_navbar .logo .navbar-menu {
+        font-size: 4em;
+        color: blue;
+        cursor: pointer; }
+    header .header_navbar .user {
+      height: 100%;
+      display: flex;
+      align-items: center; }
+      header .header_navbar .user .user-icon, header .header_navbar .user .user-arrow {
+        font-size: 4em;
+        color: #5c5c5c; }
+      header .header_navbar .user .user-arrow {
+        margin-left: -0.5em; }
+      header .header_navbar .user .user-name {
+        font-size: 2em; }
+      header .header_navbar .user .logout {
+        text-decoration: none;
+        font-size: 1em;
+        font-family: "IBM Plex Serif", serif;
+        color: blue;
+        margin: 0 1em; }
+
+.container {
+  width: 100%;
+  font-size: 10px; }
+  .container .slidebar {
+    width: 280px;
+    background-color: #ebf2f8;
+    padding: 1em;
+    position: fixed;
+    height: calc(100% - 65px);
+    margin-top: calc(65px + 5px);
+    overflow: auto;
+    margin-left: -280px;
+    transition: linear 0.3s; }
+    .container .slidebar.active {
+      margin-left: 0; }
+    .container .slidebar ul {
+      list-style: none; }
+    .container .slidebar .slidebar_menu .menu_items {
+      margin: 1.5em 0; }
+      .container .slidebar .slidebar_menu .menu_items .menu_items-button {
+        border-radius: 50px;
+        background: #ebf2f8;
+        box-shadow: 5px 5px 15px #aeb3b8,  -5px -5px 15px #ffffff;
+        display: flex;
+        align-items: center;
+        padding: 1.5em;
+        border-radius: 5px;
+        cursor: pointer; }
+        .container .slidebar .slidebar_menu .menu_items .menu_items-button.active {
+          box-shadow: inset 5px 5px 15px #aeb3b8,  inset -5px -5px 15px #ffffff; }
+        .container .slidebar .slidebar_menu .menu_items .menu_items-button span {
+          font-size: 2.5em;
+          color: black;
+          font-family: "Bebas Neue", cursive; }
+        .container .slidebar .slidebar_menu .menu_items .menu_items-button img {
+          width: 2em;
+          height: 2em;
+          margin: 0 0.5em; }
+      .container .slidebar .slidebar_menu .menu_items .menu_child {
+        display: none;
+        margin-left: 5em; }
+        .container .slidebar .slidebar_menu .menu_items .menu_child.active {
+          display: block; }
+        .container .slidebar .slidebar_menu .menu_items .menu_child .menu_child-items {
+          border-radius: 5px;
+          background: #ebf2f8;
+          box-shadow: 5px 5px 28px #bec4c9,  10px 10px 28px #ffffff;
+          text-align: center;
+          color: black;
+          font-size: 2em;
+          padding: 0.3em;
+          margin-top: 0.5em;
+          cursor: pointer; }
+          .container .slidebar .slidebar_menu .menu_items .menu_child .menu_child-items.active {
+            box-shadow: inset 5px 5px 28px #bec4c9,  inset 10px 10px 28px #ffffff; }
+  .container .container_inner {
+    padding-top: calc(65px + 3em);
+    margin-left: 1em;
+    margin-right: 1em;
+    transition: linear 0.3s; }
+    .container .container_inner.active {
+      margin-left: calc(280px + 1em); }
+    .container .container_inner .container_inner-header {
+      width: 100%;
+      height: 65px;
+      background-color: #f8fcff;
+      box-shadow: 0 0 10px #000000a5;
+      display: flex;
+      align-items: center; }
+      .container .container_inner .container_inner-header .btn {
+        font-size: 1.8em;
+        padding: 0.5em;
+        margin: 0 1em;
+        font-family: 'Oswald', sans-serif;
+        background-color: pink;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        background: #f8fcff;
+        box-shadow: 2px 2px 18px #bfc2c4,  -2px -2px 18px #ffffff;
+        outline: none; }
+        .container .container_inner .container_inner-header .btn.active {
+          box-shadow: inset 2px 2px 18px #bfc2c4,  inset -2px -2px 18px #ffffff; }
+    .container .container_inner .container_inner-body {
+      background-color: #f8fcff;
+      width: 100%;
+      height: 5000px;
+      margin-top: 1em;
+      box-shadow: 0 0 10px #000000a5;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      position: relative; }
+      .container .container_inner .container_inner-body .table {
+        margin: 1em 0;
+        font-size: 1.6em;
+        border: 1px solid;
+        padding: 0.5em;
+        text-align: center;
+        border-collapse: collapse; }
+        .container .container_inner .container_inner-body .table th {
+          color: blue;
+          margin: 1em 0;
+          font-size: 1.6em;
+          border: 1px solid;
+          padding: 0.5em;
+          text-align: center;
+          border-collapse: collapse; }
+        .container .container_inner .container_inner-body .table td {
+          border: 1px solid;
+          font-size: 1.2em;
+          padding: 0.5em;
+          text-align: center;
+          font-weight: 800; }
+          .container .container_inner .container_inner-body .table td .edit_status_combobox {
+            display: none;
+            font-size: 1em;
+            font-weight: 900;
+            color: rgba(255, 0, 0, 0.5); }
+            .container .container_inner .container_inner-body .table td .edit_status_combobox.active {
+              display: unset; }
+          .container .container_inner .container_inner-body .table td .status-now {
+            display: unset; }
+            .container .container_inner .container_inner-body .table td .status-now.unactive {
+              display: none; }
+          .container .container_inner .container_inner-body .table td .trash {
+            cursor: pointer;
+            font-size: 2em; }
+            .container .container_inner .container_inner-body .table td .trash:hover {
+              color: red; }
+            .container .container_inner .container_inner-body .table td .trash.unactive {
+              display: none; }
+          .container .container_inner .container_inner-body .table td .done {
+            cursor: pointer;
+            font-size: 2em;
+            display: none; }
+            .container .container_inner .container_inner-body .table td .done:hover {
+              color: red; }
+            .container .container_inner .container_inner-body .table td .done.active {
+              display: unset; }
+          .container .container_inner .container_inner-body .table td .clear {
+            cursor: pointer;
+            font-size: 2em;
+            display: none; }
+            .container .container_inner .container_inner-body .table td .clear:hover {
+              color: red; }
+            .container .container_inner .container_inner-body .table td .clear.active {
+              display: unset; }
+      .container .container_inner .container_inner-body .form_insert-type_product {
+        border: 1px solid blue;
+        border-radius: 5px; }
+        .container .container_inner .container_inner-body .form_insert-type_product .formTitle {
+          font-size: 2em;
+          margin: 0.5em;
+          font-weight: 900; }
+        .container .container_inner .container_inner-body .form_insert-type_product .form_insert-type_name {
+          font-size: 2em;
+          margin: 0.5em;
+          font-weight: 500; }
+        .container .container_inner .container_inner-body .form_insert-type_product .form_insert-status {
+          font-size: 2em;
+          margin: 0.5em;
+          font-weight: 500; }
+        .container .container_inner .container_inner-body .form_insert-type_product .form_insert-submit {
+          font-size: 2em;
+          margin: 0.5em;
+          color: white;
+          background-color: red;
+          border: none;
+          padding: 0.2em;
+          border-radius: 5px;
+          cursor: pointer; }
+        .container .container_inner .container_inner-body .form_insert-type_product .form_insert-cancel {
+          font-size: 2em;
+          margin: 0.5em;
+          color: white;
+          background-color: red;
+          border: none;
+          padding: 0.2em;
+          border-radius: 5px;
+          cursor: pointer; }
+      .container .container_inner .container_inner-body .form_fillter_product {
+        margin: 1em 0;
+        display: flex;
+        align-items: center; }
+        .container .container_inner .container_inner-body .form_fillter_product select {
+          font-size: 2em;
+          font-family: "IBM Plex Serif", serif; }
+        .container .container_inner .container_inner-body .form_fillter_product input {
+          font-size: 2em;
+          margin: 0.5em;
+          color: white;
+          background-color: red;
+          border: none;
+          padding: 0.1em 1em;
+          border-radius: 5px;
+          cursor: pointer;
+          font-family: "IBM Plex Serif", serif; }
+      .container .container_inner .container_inner-body .product_table {
+        border-collapse: collapse;
+        border: 2px solid #7203ff;
+        text-align: center;
+        margin: 1em 0;
+        padding: 1em; }
+        .container .container_inner .container_inner-body .product_table th {
+          border: 1px solid;
+          font-size: 1.8em;
+          border: 2px solid #7203ff;
+          padding: 1em;
+          color: blue;
+          font-weight: 900; }
+        .container .container_inner .container_inner-body .product_table td {
+          text-align: center;
+          border: 2px solid #7203ff;
+          font-size: 1.5em;
+          padding: 0.2em;
+          font-weight: 700; }
+          .container .container_inner .container_inner-body .product_table td img {
+            width: 4em; }
+          .container .container_inner .container_inner-body .product_table td .btn-icon {
+            font-size: 2.5em;
+            cursor: pointer; }
+            .container .container_inner .container_inner-body .product_table td .btn-icon:hover {
+              color: red; }
+          .container .container_inner .container_inner-body .product_table td .trash {
+            display: unset; }
+            .container .container_inner .container_inner-body .product_table td .trash.unactive {
+              display: none; }
+          .container .container_inner .container_inner-body .product_table td .done {
+            display: none; }
+            .container .container_inner .container_inner-body .product_table td .done.active {
+              display: unset; }
+          .container .container_inner .container_inner-body .product_table td .clear {
+            display: none; }
+            .container .container_inner .container_inner-body .product_table td .clear.active {
+              display: unset; }
+      .container .container_inner .container_inner-body .add {
+        position: fixed;
+        font-size: 5em;
+        top: 320px;
+        right: 1em;
+        background-color: #4378e8;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        z-index: 1; }
+      .container .container_inner .container_inner-body .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: none;
+        animation: show linear 0.5s; }
+@keyframes show {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+        .container .container_inner .container_inner-body .overlay.active {
+          display: unset; }
+      .container .container_inner .container_inner-body .add_product_form {
+        display: none;
+        flex-direction: column;
+        z-index: 2;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(10%, -35%);
+        background-color: white;
+        border-radius: 7px;
+        animation: show linear 0.5s; }
+@keyframes show {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+        .container .container_inner .container_inner-body .add_product_form.active {
+          display: flex; }
+        .container .container_inner .container_inner-body .add_product_form span {
+          font-size: 2.5em;
+          color: red;
+          font-family: "IBM Plex Serif", serif; }
+        .container .container_inner .container_inner-body .add_product_form input {
+          font-size: 1.6em;
+          padding: 0.5em;
+          margin: 0.5em;
+          font-family: "IBM Plex Serif", serif;
+          border: none;
+          outline: none;
+          background-color: transparent;
+          font-weight: 500; }
+          .container .container_inner .container_inner-body .add_product_form input:last-child {
+            font-size: 2em;
+            margin: 0.5em;
+            color: white;
+            background-color: red;
+            border: none;
+            padding: 0.2em;
+            border-radius: 5px;
+            cursor: pointer; }
+      .container .container_inner .container_inner-body .update-description {
+        display: none;
+        flex-direction: column;
+        z-index: 2;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-10%, -35%);
+        background-color: white;
+        border-radius: 7px;
+        animation: show linear 0.5s; }
+        .container .container_inner .container_inner-body .update-description.active {
+          display: flex; }
+@keyframes show {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+        .container .container_inner .container_inner-body .update-description .description-title {
+          font-size: 2.5em;
+          color: red;
+          font-family: "IBM Plex Serif", serif; }
+        .container .container_inner .container_inner-body .update-description .description-textarea {
+          border-radius: 5px;
+          font-size: 2em;
+          font-weight: 800; }
+        .container .container_inner .container_inner-body .update-description .description-btn {
+          font-size: 2em;
+          margin: 0.5em;
+          color: white;
+          background-color: red;
+          border: none;
+          padding: 0.2em;
+          border-radius: 5px;
+          cursor: pointer;
+          font-family: "IBM Plex Serif", serif; }
+      .container .container_inner .container_inner-body .update-picture {
+        width: 440px;
+        height: 740px;
+        padding: 2em;
+        z-index: 2;
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-10%);
+        background-color: white;
+        border-radius: 7px;
+        animation: show linear 0.5s;
+        overflow-x: scroll;
+        display: none;
+        flex-direction: column;
+        align-items: center; }
+        .container .container_inner .container_inner-body .update-picture.active {
+          display: flex; }
+@keyframes show {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+        .container .container_inner .container_inner-body .update-picture .update-picture-title {
+          font-size: 3em;
+          color: red;
+          font-family: "IBM Plex Serif", serif;
+          margin-bottom: 1em; }
+        .container .container_inner .container_inner-body .update-picture .table_picture {
+          border-collapse: collapse;
+          border: 0.1em solid #0df303;
+          text-align: center; }
+          .container .container_inner .container_inner-body .update-picture .table_picture th {
+            border: 0.1em solid #0df303;
+            font-size: 2.5em;
+            padding: 0.5em; }
+          .container .container_inner .container_inner-body .update-picture .table_picture td {
+            border: 0.1em solid #0df303;
+            font-size: 2em;
+            font-family: "IBM Plex Serif", serif; }
+            .container .container_inner .container_inner-body .update-picture .table_picture td img {
+              width: 6em;
+              object-fit: cover;
+              object-position: center; }
+            .container .container_inner .container_inner-body .update-picture .table_picture td span {
+              font-size: 2.5em;
+              cursor: pointer; }
+              .container .container_inner .container_inner-body .update-picture .table_picture td span:hover {
+                color: red; }
+        .container .container_inner .container_inner-body .update-picture .form_insert-picture {
+          display: flex;
+          flex-direction: column;
+          border: 0.3em solid blue;
+          border-radius: 5px;
+          margin: 1em 0; }
+          .container .container_inner .container_inner-body .update-picture .form_insert-picture .form_insert-picture-title {
+            font-size: 3em;
+            color: blue;
+            font-family: "IBM Plex Serif", serif;
+            margin-bottom: 0.5em;
+            margin-left: 0.5em; }
+          .container .container_inner .container_inner-body .update-picture .form_insert-picture .select-picture {
+            background-color: transparent;
+            font-weight: 800;
+            font-family: "IBM Plex Serif", serif;
+            margin: 0.5em; }
+          .container .container_inner .container_inner-body .update-picture .form_insert-picture .submit-insert {
+            width: 100px;
+            background-color: red;
+            font-size: 1.5em;
+            margin: 0.5em;
+            color: white;
+            border: none;
+            padding: 0.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: "IBM Plex Serif", serif; }
+      .container .container_inner .container_inner-body .table_order_show {
+        border-collapse: collapse;
+        text-align: center;
+        border: 0.2em solid blue;
+        padding: 1em; }
+        .container .container_inner .container_inner-body .table_order_show .table_order_title {
+          font-size: 3em; }
+        .container .container_inner .container_inner-body .table_order_show th {
+          font-size: 3em;
+          border: 0.2em solid green;
+          padding: 0.5em; }
+        .container .container_inner .container_inner-body .table_order_show td {
+          font-size: 3em;
+          border: 0.2em solid green;
+          padding: 0.5em; }
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 6px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 50px; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 50px; }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ff3333; }
